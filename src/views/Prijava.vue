@@ -1,29 +1,80 @@
 <template>
- <div class="prijava">
- <h1>This is an login page</h1>
- <div class="container">
- <div class="row">
- <div class="col-sm"></div>
- <div class="col-sm">
- <form>
- <div class="form-group">
- <label for="exampleInputEmail1">Email address</label>
- <input type="email" class="form-control"
-id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter
-email" />
- <small id="emailHelp" class="form-text text-muted" >We'll
-never share your email with anyone else.</small>
- </div>
- <div class="form-group">
- <label for="exampleInputPassword1">Password</label>
- <input type="password" class="form-control"
-id="exampleInputPassword1" placeholder="Password" />
- </div>
- <button type="submit" class="btn btn-primary">Submit</button>
- </form>
- </div>
- <div class="col-sm"></div>
- </div>
- </div>
- </div>
+  <div id="prvi-div">
+    <section class="container-fluid">
+      <!-- row and justify-content-center class is used to place the form in center -->
+      <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-4">
+          <form class="form-container">
+            <div class="form-group">
+              <h4 class="text-center font-weight-bold">SIGN IN</h4>
+              <label for="InputEmail1">Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="InputEmail1"
+                aria-describeby="emailHelp"
+                placeholder="Enter email"
+                v-model="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="InputPassword1"
+                placeholder="Password"
+                v-model="password"
+              />
+            </div>
+            <button
+              type="button"
+              @click="prijava"
+              class="btn btn-primary btn-block"
+            >
+              Submit
+            </button>
+            <div class="form-footer">
+              <p>Don't have an account? <a href="Registracija">Sign Up</a></p>
+            </div>
+          </form>
+        </section>
+      </section>
+    </section>
+  </div>
 </template>
+
+<style>
+#prvi-div {
+  margin-top: 75px;
+}
+</style>
+
+<script>
+import { auth, signInWithEmailAndPassword } from "@/firebase";
+export default {
+  name: "prijava",
+  data() {
+    return {
+      email: "",
+      username: "",
+      number: "",
+      password: "",
+    };
+  },
+  methods: {
+    prijava() {
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          /*this.$router.replace({ name: 'prijavljen' });*/
+          window.location.href = "Prijavljen.vue";
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    },
+  },
+};
+</script>
