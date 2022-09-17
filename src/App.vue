@@ -60,3 +60,16 @@
   }
 }
 </style>
+<!--
+<script>
+import { auth, signInWithEmailAndPassword } from "@/firebase";
+
+firebase.auth().onAuthStateChanged( user =>{
+  if(user){
+    console.log("***", user.email);
+  }else{
+    console.log('*** Nema korisnika');
+  }
+})
+</script>
+-->
