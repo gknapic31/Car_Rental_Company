@@ -67,8 +67,12 @@ export default {
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           const user = userCredential.user;
-          /*this.$router.replace({ name: 'prijavljen' });*/
-          window.location.href = "Prijavljen.vue";
+          console.log(user);
+            if(user){
+                  this.$router.replace({name:'Prijavljen'})
+            }
+
+            return user;
         })
         .catch((error) => {
           const errorCode = error.code;

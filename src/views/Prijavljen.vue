@@ -1,55 +1,50 @@
 <template>
-<div class="boja">
   <div class="prijavljen">
-    <h1>POSLOVNICE</h1><br><br><br>
-    <div class="container ">
-      <div class="row">
-        <div class="col-sm cont">
-         <h4>Zagreb Centar</h4> 
-          <li>Ulica Knaza Borne 2</li><br>
-
-          <h4>Rijeka Centar</h4> 
-          <li>Ulica Knaza Borne 2</li><br>
-
-          <h4>Pula Centar</h4> 
-          <li>Ulica Knaza Borne 2</li><br>
-
-          <h4>Senj Centar</h4> 
-          <li>Ulica Knaza Borne 2</li><br>
-
-          <h4>Split Centar</h4> 
-          <li>Ulica Knaza Borne 2</li><br>
-        </div>
-        <div class="col-sm">
-          <img src="https://www.touropia.com/gfx/b/2019/07/croatia.png" alt="Lights" style="width:100%">
-      </div>
-      </div>
-    </div>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">CAR RENTAL COMPANY</h3>
+  <a href="#reza" class="w3-bar-item w3-button">Rezervacije</a>
+  <a href="#" class="w3-bar-item w3-button">Odobrenje</a>
+  <a href="#" class="w3-bar-item w3-button">Prošlo</a>
+  <a href="#" class="w3-bar-item w3-button">Stanje vozila</a>
   </div>
+
+
+  <div style="margin-left:25%">
+
+  <div id="reza" class="w3-container w3-teal w3-light-grey ">
+    <h1>Rezervacije</h1>
+  </div>
+
+  <div class="w3-container">
+  <h2>Popis klijenata</h2><br>
+
+  <table class="w3-table w3-striped w3-bordered">
+    <tr>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Kategorija vozila</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>MCMR</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>CDAR</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>IFMR</td>
+    </tr>
+  </table>
 </div>
+  </div>       
+  </div>
 </template>
-
 <style>
-.boja{
-  background-color: #213850 ;
-  padding: 6%;
-  
-}
-.poslovnice{
-  margin: 0%;
-  width: 100%;
-  height: 100%;
-}
 
-.poslovnice h1 {
-  color: #fff;
-}
-
-.cont{
-  padding: 2%;
-  background-color: #fff;
-  height: 100%;
-  width: 10%;
-  text-align: left;
-}
 </style>
