@@ -51,7 +51,7 @@
                 placeholder="Password"
                 v-model="repeatpassword"
               />
-            </div>
+            </div><br>
             <button
               type="button"
               onsubmit="return false"
@@ -94,7 +94,12 @@ export default {
         createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           const user = userCredential.user;
-          alert('Uspješna registracija :)')
+          console.log(user);
+            if(user){
+                  this.$router.replace({name:'Korisnik'})
+            }
+
+            return user;
         })
         .catch((error) => {
           const errorCode = error.code;

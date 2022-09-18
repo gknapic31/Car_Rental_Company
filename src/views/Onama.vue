@@ -10,7 +10,7 @@
 <br><br>
     </p>
     <img src="https://www.kindpng.com/picc/m/495-4950809_visit-the-centennial-auto-group-site-group-of.png" alt="Visit The Centennial Auto Group Site - Group Of Car Png, Transparent ">
-    </div>
+    </div><br><br>
   </div>
 </template>
 

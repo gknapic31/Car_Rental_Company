@@ -21,11 +21,11 @@
           <li>Ulica Knaza Borne 2</li><br>
         </div>
         <div class="col-sm">
-          <img src="https://www.touropia.com/gfx/b/2019/07/croatia.png" alt="Lights" style="width:100%">
+          <img src="https://www.touropia.com/gfx/b/2019/07/croatia.png" alt="Map" style="width:100%">
       </div>
       </div>
     </div>
-  </div>
+  </div><br><br><br><br>
 </div>
 </template>
 

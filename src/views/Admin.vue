@@ -1,0 +1,79 @@
+<template>
+  <div id="prvi-div">
+    <section class="container-fluid">
+      <!-- row and justify-content-center class is used to place the form in center -->
+      <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-4">
+          <form class="form-container">
+            <div class="form-group">
+              <h4 class="text-center font-weight-bold">SIGN IN ADMIN</h4>
+              <label for="InputEmail1">Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="InputEmail1"
+                aria-describeby="emailHelp"
+                placeholder="Enter email"
+                v-model="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="InputPassword1"
+                placeholder="Password"
+                v-model="password"
+              />
+            </div><br>
+            <button
+              type="button"
+              @click="prijava"
+              class="btn btn-primary btn-block"
+            >
+              Submit
+            </button>
+          </form>
+        </section>
+      </section>
+    </section>
+  </div>
+</template>
+
+<style>
+#prvi-div {
+  margin-top: 75px;
+}
+</style>
+
+<script>
+import { auth, signInWithEmailAndPassword } from "@/firebase";
+export default {
+  name: "prijava",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    prijava() {
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+            if(user){
+                  this.$router.replace({name:'Prijavljen'})
+            }
+
+            return user;
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    },
+  },
+};
+</script>

@@ -2,7 +2,7 @@
   <div class="kontakt">
     <br><br>
     <h1>KONTAKTIRAJTE NAS</h1>
-<br>
+<br><br><br>
     <div class="container">
     <div class="row">
       <div class="col-sm">

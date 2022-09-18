@@ -26,7 +26,7 @@
                 placeholder="Password"
                 v-model="password"
               />
-            </div>
+            </div><br>
             <button
               type="button"
               @click="prijava"
@@ -57,8 +57,6 @@ export default {
   data() {
     return {
       email: "",
-      username: "",
-      number: "",
       password: "",
     };
   },
@@ -69,7 +67,7 @@ export default {
           const user = userCredential.user;
           console.log(user);
             if(user){
-                  this.$router.replace({name:'Prijavljen'})
+                  this.$router.replace({name:'Korisnik'})
             }
 
             return user;
